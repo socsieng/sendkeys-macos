@@ -10,6 +10,8 @@ This tool was originally created to make it easier to enter keystrokes for a smo
 npm install sendkeys-macos --global
 ```
 
+![npm install animation example](docs/sendkeys.gif)
+
 ## Usage
 
 Basic usage:

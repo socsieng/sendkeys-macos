@@ -38,9 +38,27 @@ sendkeys --help
 
 ### Markup instructions
 
-The tool allows you to specify a default interval for keystrokes to be sent (using the `-d` or `--delay` option where the default is 0.1s), pauses can be inserted into by adding `<p:number>` where `number` is the number of seconds to pause before continuing with the next character.
+Basic markup is supported to control the pause between keystrokes and to apply additional keystroke combinations.
 
-Special key combinations are also supported like arrow keys, as well as key modifiers `command`, `shift`, `control`, and `option`. This can be achieved by using the markup syntax `<c:key:modifiers>`.
+#### Inserting a pause
+
+A pause can be inserted with the `<p:number>` sequence.
+
+By default, the delay between keystrokes is set with the `-d` or `--delay` option where the default is 0.1 second. A one-off pause of 1 second can be applied between characters by inserting `<p:1>`.
+
+#### Special key combinations
+
+Special key combinations including non-printable character sequences can be applied using the `<c:key>` or `<c:key:modifiers>` markup.
+
+`key` can include any printable character or, one of the following key names: `f1`, `f2`, `f3`, `f4`, `f5`, `f6`, `f7`, `f8`, `f9`, `f10`, `f11`, `f12`, `esc`, `return`, `enter`, `delete`, `space`, `tab`, `up`, `down`, `left`, and `right`.
+
+`modifiers` is an optional list of comma separated values that can include `command`, `shift`, `control`, and `option`.
+
+Example key combinations:
+
+- `tab`: `<c:tab>`
+- `command` + `a`: `<c:a:command>`
+- `option` + `shift` + `left arrow`: `<c:left:option,shift>`
 
 ## Prerequisites
 

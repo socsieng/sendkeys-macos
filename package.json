@@ -1,6 +1,6 @@
 {
   "name": "sendkeys-macos",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Sends keystrokes to a given application with customizable delays to simulate typing",
   "main": "src/index.js",
   "scripts": {
@@ -20,6 +20,6 @@
   },
   "os": ["darwin"],
   "bin": {
-    "sendkays": "./bin/sendkeys"
+    "sendkeys": "./bin/sendkeys"
   }
 }

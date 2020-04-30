@@ -22,9 +22,6 @@
   "dependencies": {
     "commander": "^5.1.0"
   },
-  "os": [
-    "darwin"
-  ],
   "bin": {
     "sendkeys": "./bin/sendkeys"
   }

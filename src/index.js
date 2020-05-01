@@ -12,6 +12,7 @@ program
   .option('-i, --initial-delay <seconds>', 'Initial delay before sending keystrokes.', 1)
   .option('-f, --input-file <file>', 'File containing keystroke instructions.')
   .option('-c, --characters <string>', 'String of characters to send.')
+  .option('-g, --generate-script', 'Generate script instead of executing the command.')
   .parse(process.argv);
 
 if (!program.applicationName) {
@@ -40,12 +41,17 @@ if (program.characters) {
 
 function execute(input) {
   const output = generator.generate(input, program.applicationName, program.delay, program.initialDelay);
-  const result = execFileSync('osascript', ['-l', 'JavaScript', '-e', output], {
-    encoding: 'utf8',
-    stdio: 'pipe',
-  });
 
-  if (result && result.trim()) {
-    console.log(result);
+  if (program.generateScript) {
+    process.stdout.write(output);
+  } else {
+    const result = execFileSync('osascript', ['-l', 'JavaScript', '-e', output], {
+      encoding: 'utf8',
+      stdio: 'pipe',
+    });
+
+    if (result && result.trim()) {
+      console.log(result);
+    }
   }
 }

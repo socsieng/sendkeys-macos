@@ -62,7 +62,7 @@ By default, the delay between keystrokes is set with the `-d` or `--delay` optio
 
 Special key combinations including non-printable character sequences can be applied using the `<c:key>` or `<c:key:modifiers>` markup.
 
-`key` can include any printable character or, one of the following key names: `f1`, `f2`, `f3`, `f4`, `f5`, `f6`, `f7`, `f8`, `f9`, `f10`, `f11`, `f12`, `esc`, `return`, `enter`, `delete`, `space`, `tab`, `up`, `down`, `left`, and `right`.
+`key` can include any printable character or, one of the following key names: `f1`, `f2`, `f3`, `f4`, `f5`, `f6`, `f7`, `f8`, `f9`, `f10`, `f11`, `f12`, `esc`, `return`, `enter`, `delete`, `space`, `tab`, `up`, `down`, `left`, `right`, `home`, `end`, `pgup`, and `pgdown`.
 
 `modifiers` is an optional list of comma separated values that can include `command`, `shift`, `control`, and `option`.
 

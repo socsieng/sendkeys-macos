@@ -24,6 +24,10 @@ const KEYS = {
   'down': 125,
   'left': 123,
   'right': 124,
+  'home': 115,
+  'end': 119,
+  'pgup': 116,
+  'pgdown': 121,
 };
 const MODIFIERS = {
   '⌘': 'command down',

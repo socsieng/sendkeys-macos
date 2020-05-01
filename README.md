@@ -48,17 +48,17 @@ const sendKeys = require('sendkeys-macos');
 sendKeys('Notes', 'hello<c:a:command><c:c:command><c:right> <c:v:command>', { delay: 0.1, initialDelay: 1 });
 ```
 
-### Markup instructions
+## Markup instructions
 
 Basic markup is supported to control the pause between keystrokes and to apply additional keystroke combinations.
 
-#### Inserting a pause
+### Inserting a pause
 
 A pause can be inserted with the `<p:number>` sequence.
 
 By default, the delay between keystrokes is set with the `-d` or `--delay` option where the default is 0.1 second. A one-off pause of 1 second can be applied between characters by inserting `<p:1>`.
 
-#### Special key combinations
+### Special key combinations
 
 Special key combinations including non-printable character sequences can be applied using the `<c:key>` or `<c:key:modifiers>` markup.
 

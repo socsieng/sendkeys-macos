@@ -12,7 +12,7 @@ npm install sendkeys-macos --global
 
 ![npm install animation example](docs/sendkeys.gif)
 
-## Usage
+## CLI usage
 
 Basic usage:
 
@@ -36,6 +36,16 @@ Refer to the help command for more options:
 
 ```sh
 sendkeys --help
+```
+
+## CLI usage
+
+Programatic usage:
+
+```js
+const sendKeys = require('sendkeys-macos');
+
+sendKeys('Notes', 'hello<c:a:command><c:c:command><c:right> <c:v:command>', { delay: 0.1, initialDelay: 1 });
 ```
 
 ### Markup instructions

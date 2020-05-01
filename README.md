@@ -38,7 +38,7 @@ Refer to the help command for more options:
 sendkeys --help
 ```
 
-## CLI usage
+## Node usage
 
 Programatic usage:
 

@@ -16,7 +16,7 @@ const KEYS = {
   'f12': 111,
   'esc': 53,
   'return': 36,
-  'enter': 52,
+  'enter': 76,
   'delete': 51,
   'space': 49,
   'tab': 48,

@@ -1,7 +1,7 @@
 const app = Application(/** application-name **/);
 const sysevents = Application('System Events');
 
-const CHARACTERS = {
+const KEYS = {
   'f1': 122,
   'f2': 120,
   'f3': 99,
@@ -71,8 +71,8 @@ function type(text, defaultDelay) {
       const value = charMatch[1];
       const modifiers = (charMatch[3] || '').split(',').filter(m => m).map(m => MODIFIERS[m]);
 
-      if (value in CHARACTERS) {
-        sysevents.keyCode(CHARACTERS[value], { using: modifiers });
+      if (value in KEYS) {
+        sysevents.keyCode(KEYS[value], { using: modifiers });
       } else {
         sysevents.keystroke(value[0], { using: modifiers });
       }

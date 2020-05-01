@@ -1,4 +1,4 @@
-const app = Application(<!-- application-name -->);
+const app = Application(/** application-name **/);
 const sysevents = Application('System Events');
 
 const CHARACTERS = {
@@ -23,7 +23,7 @@ const CHARACTERS = {
   'up': 126,
   'down': 125,
   'left': 123,
-  'right': 124,  
+  'right': 124,
 };
 const MODIFIERS = {
   '⌘': 'command down',
@@ -43,7 +43,7 @@ const charExpression = /^\<c:([\w]+)(:([,\w⌘^⌥⇧]+))?\>/i;
 
 /**
  * Types text input with a default delay between each character.
- * 
+ *
  * @param {string} text
  * @param {number} defaultDelay
  */
@@ -93,10 +93,10 @@ function type(text, defaultDelay) {
 
 function run(input, parameters) {
   app.activate();
-	
-  delay(<!-- initial-delay -->);
 
-<!-- type-commands -->
+  delay(/** initial-delay **/);
+
+/** type-commands **/
 
   return input;
 }

@@ -1,11 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 
-const template = fs.readFileSync(path.join(__dirname, 'script.template'), 'utf8');
+const template = fs.readFileSync(path.join(__dirname, 'script.template.js'), 'utf8');
 
-const REPLACE_APPLICATION_NAME = '<!-- application-name -->';
-const REPLACE_INITIAL_DELAY = '<!-- initial-delay -->';
-const REPLACE_TYPE_COMMANDS = '<!-- type-commands -->';
+const REPLACE_APPLICATION_NAME = '/** application-name **/';
+const REPLACE_INITIAL_DELAY = '/** initial-delay **/';
+const REPLACE_TYPE_COMMANDS = '/** type-commands **/';
 
 const lineEndingExpression = /\r?\n/g;
 

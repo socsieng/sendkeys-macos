@@ -39,7 +39,7 @@ const MODIFIERS = {
 // matches <p:0.1>
 const pauseExpression = /^\<p:([\d.]+)\>/i;
 // matches <c:down>, <c:up:command>
-const charExpression = /^\<c:([\w]+)(:([,\w⌘^⌥⇧]+))?\>/i;
+const charExpression = /^\<c:(.|[\w]+)(:([,\w⌘^⌥⇧]+))?\>/i;
 
 /**
  * Types text input with a default delay between each character.

@@ -54,9 +54,9 @@ Basic markup is supported to control the pause between keystrokes and to apply a
 
 ### Inserting a pause
 
-A pause can be inserted with the `<p:number>` sequence.
+A pause can be inserted with the `<p:seconds>` sequence.
 
-By default, the delay between keystrokes is set with the `-d` or `--delay` option where the default is 0.1 second. A one-off pause of 1 second can be applied between characters by inserting `<p:1>`.
+By default, the delay between keystrokes is set with the `-d` or `--delay` option where the default is 0.1 seconds. A one-off pause of 1 second can be applied between characters by inserting `<p:1>`.
 
 ### Special key combinations
 

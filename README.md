@@ -20,6 +20,8 @@ Basic usage:
 sendkeys -a "Notes" -c "Hello<p:1> world<c:left:option,shift><c:i:command>"
 ```
 
+![hello world example](docs/example1.gif)
+
 Providing input from a file:
 
 ```sh
@@ -47,6 +49,8 @@ const sendKeys = require('sendkeys-macos');
 
 sendKeys('Notes', 'hello<c:a:command><c:c:command><c:right> <c:v:command>', { delay: 0.1, initialDelay: 1 });
 ```
+
+![hello hello example](docs/example2.gif)
 
 ## Markup instructions
 

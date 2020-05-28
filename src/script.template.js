@@ -44,6 +44,8 @@ const MODIFIERS = {
 const pauseExpression = /^\<p:([\d.]+)\>/i;
 // matches <c:down>, <c:up:command>
 const charExpression = /^\<c:(.|[\w]+)(:([,\w⌘^⌥⇧]+))?\>/i;
+// matches <\>
+const continuationExpression = /^\<\\\>/;
 
 /**
  * Types text input with a default delay between each character.
@@ -69,6 +71,13 @@ function type(text, defaultDelay) {
   }
 
   do {
+    const continuationMatch = continuationExpression.exec(text.substring(index));
+
+    if (continuationMatch) {
+      index += continuationMatch[0].length + 1;
+      continue;
+    }
+
     const charMatch = charExpression.exec(text.substring(index));
 
     if (charMatch) {

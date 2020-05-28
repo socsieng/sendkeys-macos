@@ -76,6 +76,12 @@ Example key combinations:
 - `command` + `a`: `<c:a:command>`
 - `option` + `shift` + `left arrow`: `<c:left:option,shift>`
 
+### Continuation
+
+A continuation can be used to ignore the next character. This is useful to help with formatting a long sequence of character and inserting a new line for authoring purposes.
+
+Insert a continuation using the character sequence `<\>`. The character following the sequence will be skipped over.
+
 ## Prerequisites
 
 This script only works on macOS as it has a dependency on the macOS Automator application.

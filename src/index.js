@@ -10,7 +10,7 @@ const defaultOptions = {
 function sendKeys(appName, keystrokes, options = {}) {
   const mergedOptions = {
     ...defaultOptions,
-    ...options || {},
+    ...(options || {}),
   };
   const output = generator.generate(keystrokes, appName, mergedOptions.delay, mergedOptions.initialDelay);
 

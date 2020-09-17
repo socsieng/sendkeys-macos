@@ -2,7 +2,8 @@
 
 This is a CLI tool to send keys to a given app to simulate typing at a given speed.
 
-This tool was originally created to make it easier to enter keystrokes for a smooth screen recording of code being typed in.
+This tool was originally created to make it easier to enter keystrokes for a smooth screen recording of code being typed
+in.
 
 # Installation
 
@@ -60,13 +61,17 @@ Basic markup is supported to control the pause between keystrokes and to apply a
 
 A pause can be inserted with the `<p:seconds>` sequence.
 
-By default, the delay between keystrokes is set with the `-d` or `--delay` option where the default is 0.1 seconds. A one-off pause of 1 second can be applied between characters by inserting `<p:1>`.
+By default, the delay between keystrokes is set with the `-d` or `--delay` option where the default is 0.1 seconds. A
+one-off pause of 1 second can be applied between characters by inserting `<p:1>`.
 
 ### Special key combinations
 
-Special key combinations including non-printable character sequences can be applied using the `<c:key>` or `<c:key:modifiers>` markup.
+Special key combinations including non-printable character sequences can be applied using the `<c:key>` or
+`<c:key:modifiers>` markup.
 
-`key` can include any printable character or, one of the following key names: `f1`, `f2`, `f3`, `f4`, `f5`, `f6`, `f7`, `f8`, `f9`, `f10`, `f11`, `f12`, `esc`, `return`, `enter`, `delete`, `space`, `tab`, `up`, `down`, `left`, `right`, `home`, `end`, `pgup`, and `pgdown`.
+`key` can include any printable character or, one of the following key names: `f1`, `f2`, `f3`, `f4`, `f5`, `f6`, `f7`,
+`f8`, `f9`, `f10`, `f11`, `f12`, `esc`, `return`, `enter`, `delete`, `space`, `tab`, `up`, `down`, `left`, `right`,
+`home`, `end`, `pgup`, and `pgdown`.
 
 `modifiers` is an optional list of comma separated values that can include `command`, `shift`, `control`, and `option`.
 
@@ -78,7 +83,8 @@ Example key combinations:
 
 ### Continuation
 
-A continuation can be used to ignore the next character. This is useful to help with formatting a long sequence of character and inserting a new line for authoring purposes.
+A continuation can be used to ignore the next character. This is useful to help with formatting a long sequence of
+character and inserting a new line for authoring purposes.
 
 Insert a continuation using the character sequence `<\>`. The character following the sequence will be skipped over.
 
@@ -86,4 +92,6 @@ Insert a continuation using the character sequence `<\>`. The character followin
 
 This script only works on macOS as it has a dependency on the macOS Automator application.
 
-When running from the terminal, ensure that the terminal has permissions to send keystrokes. This can be done by navigating to System Preferences > Security & Privacy > Privacy > Accessibility and adding your terminal application there.
+When running from the terminal, ensure that the terminal has permissions to send keystrokes. This can be done by
+navigating to System Preferences > Security & Privacy > Privacy > Accessibility and adding your terminal application
+there.

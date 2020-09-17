@@ -7,6 +7,8 @@
   },
   "main": "src/index.js",
   "scripts": {
+    "pretty": "node_modules/prettier/bin-prettier.js . --write --loglevel warn",
+    "pretty:check": "node_modules/prettier/bin-prettier.js . --check",
     "test": "./bin/sendkeys --version",
     "tag": "git tag -f \"v$(bin/version)\""
   },
@@ -24,5 +26,8 @@
   },
   "bin": {
     "sendkeys": "./bin/sendkeys"
+  },
+  "devDependencies": {
+    "prettier": "npm:@btmills/prettier@^2.1.1"
   }
 }

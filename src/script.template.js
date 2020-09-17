@@ -47,62 +47,7 @@ const charExpression = /^\<c:(.|[\w]+)(:([,\w⌘^⌥⇧]+))?\>/i;
 // matches <\>
 const continuationExpression = /^\<\\\>/;
 
-/**
- * Types text input with a default delay between each character.
- *
- * @param {string} text
- * @param {number} defaultDelay
- */
-function type(text, defaultDelay) {
-  let index = 0;
-
-  function ensurePause(pause) {
-    const pauseMatch = pauseExpression.exec(text.substring(index));
-    if (pauseMatch) {
-      const value = parseFloat(pauseMatch[1]);
-      delay(value);
-      index += pauseMatch[0].length;
-      return true;
-    }
-    if (pause) {
-      delay(pause);
-    }
-    return false;
-  }
-
-  do {
-    const continuationMatch = continuationExpression.exec(text.substring(index));
-
-    if (continuationMatch) {
-      index += continuationMatch[0].length + 1;
-      continue;
-    }
-
-    const charMatch = charExpression.exec(text.substring(index));
-
-    if (charMatch) {
-      const value = charMatch[1];
-      const modifiers = (charMatch[3] || '').split(',').filter(m => m).map(m => MODIFIERS[m]);
-
-      if (value in KEYS) {
-        sysevents.keyCode(KEYS[value], { using: modifiers });
-      } else {
-        sysevents.keystroke(value[0], { using: modifiers });
-      }
-      index += charMatch[0].length;
-      ensurePause(defaultDelay);
-      continue;
-    }
-
-    if (ensurePause()) continue;
-
-    sysevents.keystroke(text[index]);
-    index++;
-
-    ensurePause(defaultDelay);
-  } while (text[index]);
-}
-
+/** type-function **/
 
 function run(input, parameters) {
   app.activate();

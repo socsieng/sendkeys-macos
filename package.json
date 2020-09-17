@@ -9,7 +9,7 @@
   "scripts": {
     "pretty": "node_modules/prettier/bin-prettier.js . --write --loglevel warn",
     "pretty:check": "node_modules/prettier/bin-prettier.js . --check",
-    "test": "./bin/sendkeys --version",
+    "test": "mocha ./**/*.spec.js",
     "tag": "git tag -f \"v$(bin/version)\""
   },
   "keywords": [
@@ -28,6 +28,9 @@
     "sendkeys": "./bin/sendkeys"
   },
   "devDependencies": {
-    "prettier": "npm:@btmills/prettier@^2.1.1"
+    "chai": "^4.2.0",
+    "mocha": "^8.1.3",
+    "prettier": "npm:@btmills/prettier@^2.1.1",
+    "sinon": "^9.0.3"
   }
 }

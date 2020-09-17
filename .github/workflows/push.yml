@@ -37,7 +37,7 @@ jobs:
         with:
           token: ${{secrets.GITHUB_TOKEN}}
           release-type: node
-          package-name: ace-custom-element
+          package-name: sendkeys-macos
 
       # push to npm if release-please created a release
       - uses: actions/checkout@v2

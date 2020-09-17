@@ -1,0 +1,6 @@
+{
+  "hooks": {
+    "pre-commit": "npm run pretty ",
+    "pre-push": "npm run test"
+  }
+}

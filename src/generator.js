@@ -15,7 +15,7 @@ function generate(text, app, delay, initialDelay) {
   const commands = `type(${JSON.stringify(text.replace(lineEndingExpression, '\r'))}, ${delay}, { delay, sysevents });`;
 
   return template
-    .replace(REPLACE_APPLICATION_NAME, JSON.stringify(app))
+    .replace(REPLACE_APPLICATION_NAME, app || '')
     .replace(REPLACE_INITIAL_DELAY, initialDelay)
     .replace(REPLACE_TYPE_FUNCTION, type.toString())
     .replace(REPLACE_TYPE_COMMANDS, commands);

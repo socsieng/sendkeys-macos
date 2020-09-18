@@ -1,10 +1,13 @@
-const app = Application(/** application-name **/);
+const appName = "/** application-name **/";
+const app = appName ? Application(appName) : null;
 const sysevents = Application('System Events');
 
 /** type-function **/
 
 function run(input, parameters) {
-  app.activate();
+  if (app) {
+    app.activate();
+  }
 
   delay(/** initial-delay **/);
 

@@ -15,11 +15,6 @@ program
   .option('-g, --generate-script', 'Generate script instead of executing the command.')
   .parse(process.argv);
 
-if (!program.applicationName) {
-  console.error('Missing option --application-name.');
-  process.exit(1);
-}
-
 if (program.characters) {
   execute(program.characters);
 } else if (!program.inputFile) {

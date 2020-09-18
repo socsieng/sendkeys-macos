@@ -12,13 +12,7 @@ const REPLACE_TYPE_COMMANDS = '/** type-commands **/';
 const lineEndingExpression = /\r?\n/g;
 
 function generate(text, app, delay, initialDelay) {
-  const lines = text.split(lineEndingExpression);
-  const commands = lines
-    .map(
-      (line, index) =>
-        `  type(${JSON.stringify(line + (index === lines.length - 1 ? '' : '\r'))}, ${delay}, { delay, sysevents });`,
-    )
-    .join(`\n`);
+  const commands = `type(${JSON.stringify(text.replace(lineEndingExpression, '\r'))}, ${delay}, { delay, sysevents });`;
 
   return template
     .replace(REPLACE_APPLICATION_NAME, JSON.stringify(app))

@@ -1,6 +1,7 @@
-<c:tab>const d = new date();<p:2>
+<c:tab>const d = new date();<p:1>
 console.log('date', d);<p:1><c:a:command><p:1><c:delete><\>
 <\>
 /* The quick brown fox jumps over the lazy dog. <\>
 The quick brown fox jumps over the lazy dog. <\>
 The quick brown fox jumps over the lazy dog. */
+/* hello world */

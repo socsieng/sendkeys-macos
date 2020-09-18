@@ -49,7 +49,7 @@ function type(text, defaultDelay, { delay, sysevents }) {
   };
 
   // matches <p:0.1>
-  const pauseExpression = /^\<p:([\d.]+)\>/;
+  const pauseExpression = /^\<(p):([\d.]+)\>/i;
   // matches <c:down>, <c:up:command>
   const charExpression = /^\<c:(.|[\w]+)(:([,\w⌘^⌥⇧]+))?\>/;
   // matches <\>
@@ -60,9 +60,15 @@ function type(text, defaultDelay, { delay, sysevents }) {
   function ensurePause(pause) {
     const pauseMatch = pauseExpression.exec(text.substring(index));
     if (pauseMatch) {
-      const value = parseFloat(pauseMatch[1]);
+      const value = parseFloat(pauseMatch[2]);
       delay(value);
       index += pauseMatch[0].length;
+
+      // update default delay
+      if (pauseMatch[1] === 'P') {
+        defaultDelay = value;
+      }
+
       return true;
     }
     if (pause) {

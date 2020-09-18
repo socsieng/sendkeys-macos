@@ -64,6 +64,8 @@ A pause can be inserted with the `<p:seconds>` sequence.
 By default, the delay between keystrokes is set with the `-d` or `--delay` option where the default is 0.1 seconds. A
 one-off pause of 1 second can be applied between characters by inserting `<p:1>`.
 
+`<P:seconds>` (note upper case `P`) can be used to modify the default delay between subsequent keystrokes.
+
 ### Special key combinations
 
 Special key combinations including non-printable character sequences can be applied using the `<c:key>` or

@@ -2,8 +2,12 @@ const type = require('./type');
 const sinon = require('sinon');
 const expect = require('chai').expect;
 
-function charactSequenceFromKeystrokes(keystrokeCalls) {
+function characterSequenceFromKeystrokes(keystrokeCalls) {
   return keystrokeCalls.map(call => call.args[0]).join('');
+}
+
+function getPauseSequenceFromDelays(delayCalls) {
+  return delayCalls.map(call => call.args[0]);
 }
 
 describe('type', () => {
@@ -133,13 +137,34 @@ describe('type', () => {
       expect(delayCalls[1].args).to.eql([0.1]);
     });
 
-    it('should ignore upper case pause', () => {
-      type('<P:1>a', 0.1, { delay, sysevents });
+    it('should remember sticky pause', () => {
+      type('<P:1>abc', 0.1, { delay, sysevents });
 
-      const sequence = charactSequenceFromKeystrokes(keystroke.getCalls());
+      const keystrokeSequence = characterSequenceFromKeystrokes(keystroke.getCalls());
+      const delaySequence = getPauseSequenceFromDelays(delay.getCalls());
 
-      expect(sequence).to.equal('<P:1>a');
-      expect(delay.callCount).to.equal(6);
+      expect(keystrokeSequence).to.equal('abc');
+      expect(delaySequence).to.eql([1, 1, 1, 1]);
+    });
+
+    it('should remember sticky pause mid sequence', () => {
+      type('ab<P:1>cd', 0.1, { delay, sysevents });
+
+      const keystrokeSequence = characterSequenceFromKeystrokes(keystroke.getCalls());
+      const delaySequence = getPauseSequenceFromDelays(delay.getCalls());
+
+      expect(keystrokeSequence).to.equal('abcd');
+      expect(delaySequence).to.eql([0.1, 1, 1, 1]);
+    });
+
+    it('should remember sticky pause mid sequence with additional change in pause', () => {
+      type('ab<P:1>cd<p:0.2>ef<P:3>ghi', 0.1, { delay, sysevents });
+
+      const keystrokeSequence = characterSequenceFromKeystrokes(keystroke.getCalls());
+      const delaySequence = getPauseSequenceFromDelays(delay.getCalls());
+
+      expect(keystrokeSequence).to.equal('abcdefghi');
+      expect(delaySequence).to.eql([0.1, 1, 1, 0.2, 1, 3, 3, 3, 3]);
     });
   });
 
@@ -168,7 +193,7 @@ describe('type', () => {
     it('should ignore the first character in pause sequence', () => {
       type('<\\><p:1>', 0.1, { delay, sysevents });
 
-      const sequence = charactSequenceFromKeystrokes(keystroke.getCalls());
+      const sequence = characterSequenceFromKeystrokes(keystroke.getCalls());
 
       expect(sequence).to.equal('p:1>');
     });
@@ -176,7 +201,7 @@ describe('type', () => {
     it('should ignore the first character in keycode sequence', () => {
       type('<\\><c:up:shift>', 0.1, { delay, sysevents });
 
-      const sequence = charactSequenceFromKeystrokes(keystroke.getCalls());
+      const sequence = characterSequenceFromKeystrokes(keystroke.getCalls());
 
       expect(sequence).to.equal('c:up:shift>');
     });

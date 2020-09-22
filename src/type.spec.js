@@ -44,11 +44,23 @@ describe('type', () => {
     it('should send two keystrokes', () => {
       type('12', 0.1, { delay, sysevents });
 
-      const keystrokeCalls = keystroke.getCalls();
-      expect(keystrokeCalls).to.have.lengthOf(2);
-      expect(keystrokeCalls[0].args[0]).to.equal('1');
-      expect(keystrokeCalls[1].args[0]).to.equal('2');
+      const sequence = characterSequenceFromKeystrokes(keystroke.getCalls());
+      expect(sequence).to.equal('12');
       expect(delay.callCount).to.equal(2);
+    });
+
+    it('should send carriage returns instead of new lines', () => {
+      type('1\n2\n', 0.1, { delay, sysevents });
+
+      const sequence = characterSequenceFromKeystrokes(keystroke.getCalls());
+      expect(sequence).to.equal('1\r2\r');
+    });
+
+    it('should send carriage returns instead of Windows style new lines', () => {
+      type('1\r\n2\r\n', 0.1, { delay, sysevents });
+
+      const sequence = characterSequenceFromKeystrokes(keystroke.getCalls());
+      expect(sequence).to.equal('1\r2\r');
     });
   });
 

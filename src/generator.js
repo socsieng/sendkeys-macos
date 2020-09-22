@@ -9,10 +9,8 @@ const REPLACE_INITIAL_DELAY = '/** initial-delay **/';
 const REPLACE_TYPE_FUNCTION = '/** type-function **/';
 const REPLACE_TYPE_COMMANDS = '/** type-commands **/';
 
-const lineEndingExpression = /\r?\n/g;
-
 function generate(text, app, delay, initialDelay) {
-  const commands = `type(${JSON.stringify(text.replace(lineEndingExpression, '\r'))}, ${delay}, { delay, sysevents });`;
+  const commands = `type(${JSON.stringify(text)}, ${delay}, { delay, sysevents });`;
 
   return template
     .replace(REPLACE_APPLICATION_NAME, app || '')

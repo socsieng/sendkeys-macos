@@ -1,11 +1,11 @@
 /**
  * Types text input with a default delay between each character.
  *
- * @param {string} text
+ * @param {string} input
  * @param {number} defaultDelay
  * @param {*} options
  */
-function type(text, defaultDelay, { delay, sysevents }) {
+function type(input, defaultDelay, { delay, sysevents }) {
   const KEYS = {
     f1: 122,
     f2: 120,
@@ -54,7 +54,9 @@ function type(text, defaultDelay, { delay, sysevents }) {
   const charExpression = /^\<c:(.|[\w]+)(:([,\w⌘^⌥⇧]+))?\>/;
   // matches <\>
   const continuationExpression = /^\<\\\>/;
+  const lineEndingExpression = /\r?\n/g;
 
+  const text = input.replace(lineEndingExpression, '\r');
   let index = 0;
 
   function ensurePause(pause) {

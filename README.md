@@ -11,7 +11,7 @@ in.
 npm install sendkeys-macos --global
 ```
 
-![npm install animation example](docs/sendkeys.gif)
+![npm install animation example](https://github.com/socsieng/sendkeys-macos/raw/master/docs/sendkeys.gif)
 
 ## CLI usage
 
@@ -21,7 +21,7 @@ Basic usage:
 sendkeys -a "Notes" -c "Hello<p:1> world<c:left:option,shift><c:i:command>"
 ```
 
-![hello world example](docs/example1.gif)
+![hello world example](https://github.com/socsieng/sendkeys-macos/raw/master/docs/example1.gif)
 
 Providing input from a file:
 
@@ -51,7 +51,7 @@ const sendKeys = require('sendkeys-macos');
 sendKeys('Notes', 'hello<c:a:command><c:c:command><c:right> <c:v:command>', { delay: 0.1, initialDelay: 1 });
 ```
 
-![hello hello example](docs/example2.gif)
+![hello hello example](https://github.com/socsieng/sendkeys-macos/raw/master/docs/example2.gif)
 
 ## Markup instructions
 

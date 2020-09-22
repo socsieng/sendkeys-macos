@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.1](https://www.github.com/socsieng/sendkeys-macos/compare/v1.1.0...v1.1.1) (2020-09-22)
+
+
+### Bug Fixes
+
+* exclude images from npm package ([35bdb70](https://www.github.com/socsieng/sendkeys-macos/commit/35bdb70961af4ab0adeea82fd8d6c130f94a171b))
+
 ## [1.1.0](https://www.github.com/socsieng/sendkeys-macos/compare/v1.0.1...v1.1.0) (2020-09-18)
 
 

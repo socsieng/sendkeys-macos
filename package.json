@@ -20,7 +20,7 @@
     "automator"
   ],
   "author": "socsieng",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "dependencies": {
     "commander": "^5.1.0"
   },
@@ -39,6 +39,7 @@
     "bin/sendkeys",
     "package.json",
     "CHANGELOG.md",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ]
 }

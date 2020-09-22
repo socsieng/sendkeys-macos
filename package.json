@@ -36,6 +36,7 @@
   },
   "files": [
     "src/*",
+    "!src/*.spec.js",
     "bin/sendkeys",
     "package.json",
     "CHANGELOG.md",

@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.2](https://www.github.com/socsieng/sendkeys-macos/compare/v1.1.1...v1.1.2) (2020-09-22)
+
+
+### Bug Fixes
+
+* exclude tests from npm package ([7b6f073](https://www.github.com/socsieng/sendkeys-macos/commit/7b6f073d7159d36016df75a1879c6e22f06c810c))
+
 ### [1.1.1](https://www.github.com/socsieng/sendkeys-macos/compare/v1.1.0...v1.1.1) (2020-09-22)
 
 

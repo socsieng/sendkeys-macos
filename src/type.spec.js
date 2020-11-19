@@ -108,6 +108,12 @@ describe('type', () => {
 
       expect(keycode.notCalled).to.equal(true);
     });
+
+    it('should send standard keystroke (2) with control down', () => {
+      type('<c:2:control>', 0.1, { delay, sysevents });
+
+      expect(keystroke.calledWith('2', { using: ['control down'] })).to.equal(true);
+    });
   });
 
   describe('delays', () => {

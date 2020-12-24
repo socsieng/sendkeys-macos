@@ -1,6 +1,6 @@
 {
   "name": "sendkeys-macos",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Sends keystrokes to a given application with customizable delays to simulate typing",
   "repository": {
     "url": "https://github.com/socsieng/sendkeys-macos"

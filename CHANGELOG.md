@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.2](https://www.github.com/socsieng/sendkeys-macos/compare/v1.2.1...v1.2.2) (2020-12-24)
+
+
+### Bug Fixes
+
+* update build script to properly detect OS ([b7b4699](https://www.github.com/socsieng/sendkeys-macos/commit/b7b46992fabb14511ac094939ce86ce405df4450))
+
 ### [1.2.1](https://www.github.com/socsieng/sendkeys-macos/compare/v1.2.0...v1.2.1) (2020-12-24)
 
 

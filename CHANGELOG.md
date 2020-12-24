@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://www.github.com/socsieng/sendkeys-macos/compare/v1.1.2...v1.2.0) (2020-12-24)
+
+
+### Features
+
+* add experimental support for mouse movements ([7f5b93f](https://www.github.com/socsieng/sendkeys-macos/commit/7f5b93fe3cea210d587fe7b700064583b94aad2b))
+
 ### [1.1.2](https://www.github.com/socsieng/sendkeys-macos/compare/v1.1.1...v1.1.2) (2020-09-22)
 
 

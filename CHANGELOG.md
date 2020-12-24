@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.2.1](https://www.github.com/socsieng/sendkeys-macos/compare/v1.2.0...v1.2.1) (2020-12-24)
+
+
+### Bug Fixes
+
+* include build scripts as part of package ([03b23ea](https://www.github.com/socsieng/sendkeys-macos/commit/03b23ea280e2857f5d4367458e27b2370813adf4))
+
 ## [1.2.0](https://www.github.com/socsieng/sendkeys-macos/compare/v1.1.2...v1.2.0) (2020-12-24)
 
 

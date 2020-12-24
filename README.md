@@ -5,6 +5,8 @@ This is a CLI tool to send keys to a given app to simulate typing at a given spe
 This tool was originally created to make it easier to enter keystrokes for a smooth screen recording of code being typed
 in.
 
+_Includes experimental support for mouse operations._
+
 # Installation
 
 ```sh
@@ -82,6 +84,17 @@ Example key combinations:
 - `tab`: `<c:tab>`
 - `command` + `a`: `<c:a:command>`
 - `option` + `shift` + `left arrow`: `<c:left:option,shift>`
+
+### Mouse commands
+
+Experimental support for mouse commands, including:
+
+- Mouse move: `<m:x1,y1,x2,y2:duration_in_seconds>`
+- Mouse click: `<m:button:number_of_clicks>`
+  - `button` supported values `left`, `center`, `right`.
+  - `number_of_clicks` defaults to `1`
+- Mouse drag: `<d:x1,y1,x2,y2:duration_in_seconds:button>`
+  - `button` supported values `left`, `center`, `right`. Defaults to `left`.
 
 ### Continuation
 

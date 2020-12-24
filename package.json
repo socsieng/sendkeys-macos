@@ -10,14 +10,20 @@
     "pretty": "node_modules/prettier/bin-prettier.js . --write --loglevel warn",
     "pretty:check": "node_modules/prettier/bin-prettier.js . --check",
     "test": "mocha ./**/*.spec.js",
-    "tag": "git tag -f \"v$(bin/version)\""
+    "tag": "git tag -f \"v$(bin/version)\"",
+    "build": "scripts/build.sh",
+    "install": "scripts/build.sh"
   },
   "keywords": [
     "keystrokes",
     "send",
     "sendkeys",
     "macos",
-    "automator"
+    "automator",
+    "mouse",
+    "move",
+    "drag",
+    "click"
   ],
   "author": "socsieng",
   "license": "Apache-2.0",

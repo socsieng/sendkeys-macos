@@ -188,6 +188,11 @@ int main(int argc, char *argv[]) {
 
   CGPoint mouseLocation = getCurrentMousePosition();
 
+  if (argc == 1) {
+    printf("current position: %d, %d\n", (int)mouseLocation.x, (int)mouseLocation.y);
+    return 0;
+  }
+
   // use current mouse position
   if ([args objectForKey:@"x1"] == nil) {
     x1 = mouseLocation.x;

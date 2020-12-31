@@ -1,3 +1,16 @@
+# Notice
+
+I've rewritten this tool using Swift ([`sendkeys`](https://github.com/socsieng/sendkeys)) and can be installed using
+[homebrew](https://brew.sh/):
+
+```sh
+brew install socsieng/tap/sendkeys
+```
+
+It includes expanded support for mouse commands.
+
+I am no longer maintaining this library and encourage you to use the Swift version instead.
+
 # SendKeys for macOS
 
 This is a CLI tool to send keys to a given app to simulate typing at a given speed.

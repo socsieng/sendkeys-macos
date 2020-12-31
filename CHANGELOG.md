@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://www.github.com/socsieng/sendkeys-macos/compare/v1.2.2...v1.3.0) (2020-12-31)
+
+
+### Features
+
+* output current mouse position when no arguments are specified ([4890714](https://www.github.com/socsieng/sendkeys-macos/commit/48907140d0eeb52bb4da6504f7b5b06f69bcb438))
+
 ### [1.2.2](https://www.github.com/socsieng/sendkeys-macos/compare/v1.2.1...v1.2.2) (2020-12-24)
 
 
